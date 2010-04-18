@@ -14,11 +14,11 @@ import java.awt.image.BufferedImage;
  * images.
  */
 public class SFont extends BitmapFont {
-	private static final String STANDARD_CONTAINED_CHARACTERS = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
+	public static final String STANDARD_CONTAINED_CHARACTERS = "!\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~";
 
 	private static class SFontBitmapFontCharacter implements BitmapFontCharacter {
-		public final int left;
-		public final int right;
+		private final int left;
+		private final int right;
 		private final BufferedImage fontImage;
 		private final Dimension size;
 
@@ -95,6 +95,7 @@ public class SFont extends BitmapFont {
 						widestChar = (widestChar >= characterInfo.getSize().width) ? widestChar : characterInfo
 								.getSize().width;
 						if (currentChar == containedCharactersString.length()) {
+							// Oops, more characters were expected, but we're at the end of the image!
 							break;
 						}
 					}
@@ -112,6 +113,16 @@ public class SFont extends BitmapFont {
 		}
 	}
 
+	/**
+	 * Initialize the font. The characters in the fontImage are expected to be
+	 * in the order as specified by the original SFont library.
+	 * 
+	 * @param fontImage
+	 *            the image that contains the font character bitmaps.
+	 * @param containedCharactersString
+	 *            the characters that can be found in fontImage, from left to
+	 *            right.
+	 */
 	public SFont(final BufferedImage fontImage, final String containedCharactersString) {
 		this(fontImage, 1, containedCharactersString);
 	}

@@ -1,8 +1,6 @@
 package com.laamella.sfont;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 
 /**
@@ -30,8 +28,7 @@ public class SFont extends BitmapFont {
 		}
 
 		public void draw(final Graphics graphics, final Point point) {
-			graphics.drawImage(fontImage, point.x, point.y, point.x + size.width, point.y + size.height - 1, left, 1,
-					right, size.height, null);
+			graphics.drawImage(fontImage, point.x, point.y, point.x + size.width, point.y + size.height - 1, left, 1, right, size.height, null);
 		}
 
 		public Dimension getSize() {
@@ -60,7 +57,7 @@ public class SFont extends BitmapFont {
 	 *            the amount of pixels put between characters.
 	 */
 	public SFont(final BufferedImage fontImage, final int spacing) {
-		this(fontImage, 1, STANDARD_CONTAINED_CHARACTERS);
+		this(fontImage, spacing, STANDARD_CONTAINED_CHARACTERS);
 	}
 
 	/**
@@ -92,8 +89,7 @@ public class SFont extends BitmapFont {
 						addCharacter(containedCharacters[currentChar], characterInfo);
 						currentChar++;
 
-						widestChar = (widestChar >= characterInfo.getSize().width) ? widestChar : characterInfo
-								.getSize().width;
+						widestChar = (widestChar >= characterInfo.getSize().width) ? widestChar : characterInfo.getSize().width;
 						if (currentChar == containedCharactersString.length()) {
 							// Oops, more characters were expected, but we're at the end of the image!
 							break;

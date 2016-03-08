@@ -3,7 +3,7 @@
 
     <groupId>com.laamella</groupId>
     <artifactId>sfont</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Bitmap font library compatible with Karl Bartel's SFont</description>
@@ -95,7 +95,7 @@
         <connection>scm:git:git@github.com:laamella-gad/sfont.git</connection>
         <developerConnection>scm:git:git@github.com:laamella-gad/sfont.git</developerConnection>
         <url>https://github.com/laamella-gad/sfont.git</url>
-        <tag>sfont-1.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <licenses>

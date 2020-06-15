@@ -1,8 +1,6 @@
 package com.laamella.sfont;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 
 /**
  * Aa single character in a {@link BitmapFont}.

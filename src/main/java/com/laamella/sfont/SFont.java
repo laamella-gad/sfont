@@ -3,6 +3,8 @@ package com.laamella.sfont;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+import static java.lang.Math.*;
+
 /**
  * A Java version of <a href="http://www.linux-games.com/sfont/">Karl Bartel's
  * SFont library</a>.
@@ -89,7 +91,7 @@ public class SFont extends BitmapFont {
 						addCharacter(containedCharacters[currentChar], characterInfo);
 						currentChar++;
 
-						widestChar = (widestChar >= characterInfo.getSize().width) ? widestChar : characterInfo.getSize().width;
+						widestChar = max(widestChar, characterInfo.getSize().width);
 						if (currentChar == containedCharactersString.length()) {
 							// Oops, more characters were expected, but we're at the end of the image!
 							break;

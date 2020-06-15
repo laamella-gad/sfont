@@ -1,14 +1,12 @@
 package com.laamella.sfont;
 
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.geom.Point2D;
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class BitmapFont {
-	private final Map<Character, BitmapFontCharacter> characterSet = new HashMap<Character, BitmapFontCharacter>();
+	private final Map<Character, BitmapFontCharacter> characterSet = new HashMap<>();
 	private final int spacing;
 
 	protected BitmapFont(final int spacing) {

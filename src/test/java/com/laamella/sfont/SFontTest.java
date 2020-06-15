@@ -1,6 +1,6 @@
 package com.laamella.sfont;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class SFontTest {
 	@Test
